@@ -1,7 +1,6 @@
 package com.company;
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 /**
  * Write a Person class with an instance variable, age, and a constructor that takes an integer,
