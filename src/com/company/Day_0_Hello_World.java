@@ -1,11 +1,11 @@
 package com.company;
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
+/**
+ * To complete this challenge, you must save a line of input from stdin to a variable, print
+ * Hello, World. on a single line, and finally print the value of your variable on a second line.
+ */
 public class Day_0_Hello_World {
 
     public static void main(String[] args) {
