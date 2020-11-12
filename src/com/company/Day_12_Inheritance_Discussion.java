@@ -1,6 +1,8 @@
 package com.company;
 
-public class Day_12_Inheritance_Student_Discussion extends Day_12_Inheritance_Person {
+import java.util.Scanner;
+
+class Student_Discussion extends Person {
     private int[] testScores;
 
     /*
@@ -12,7 +14,7 @@ public class Day_12_Inheritance_Student_Discussion extends Day_12_Inheritance_Pe
      *   @param scores - An array of integers denoting the Person's test scores.
      */
     // Write your constructor here
-    Day_12_Inheritance_Student_Discussion(String firstName, String lastName,
+    Student_Discussion(String firstName, String lastName,
                                           int identification, int[] testScores) {
         super(firstName, lastName, identification);
         this.testScores = testScores;
@@ -31,7 +33,24 @@ public class Day_12_Inheritance_Student_Discussion extends Day_12_Inheritance_Pe
         return (avg > 89 ? 'O' : avg > 79 ? 'E' : avg > 69 ?
                 'A' : avg > 54 ? 'P' : avg > 39 ? 'D' : 'T');
     }
+}
 
+public class Day_12_Inheritance_Discussion {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String firstName = scan.next();
+        String lastName = scan.next();
+        int id = scan.nextInt();
+        int numScores = scan.nextInt();
+        int[] testScores = new int[numScores];
+        for (int i = 0; i < numScores; i++) {
+            testScores[i] = scan.nextInt();
+        }
+        scan.close();
 
+        Student_Discussion s = new Student_Discussion(firstName, lastName, id, testScores);
+        s.printPerson();
+        System.out.println("Grade: " + s.calculate());
+    }
 }
 

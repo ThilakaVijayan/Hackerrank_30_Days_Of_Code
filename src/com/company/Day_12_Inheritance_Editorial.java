@@ -1,6 +1,8 @@
 package com.company;
 
-public class Day_12_Inheritance_Student_Editorial extends Day_12_Inheritance_Person {
+import java.util.Scanner;
+
+class Student_Editorial extends Person {
     private int[] testScores;
 
     /*
@@ -12,7 +14,7 @@ public class Day_12_Inheritance_Student_Editorial extends Day_12_Inheritance_Per
      *   @param scores - An array of integers denoting the Person's test scores.
      */
     // Write your constructor here
-    Day_12_Inheritance_Student_Editorial(String firstName, String lastName,
+    Student_Editorial(String firstName, String lastName,
                                          int identification, int[] testScores) {
         super(firstName, lastName, identification);
         this.testScores = testScores;
@@ -48,6 +50,26 @@ public class Day_12_Inheritance_Student_Editorial extends Day_12_Inheritance_Per
             return 'D';
         else
             return 'T';
+    }
+}
+
+
+public class Day_12_Inheritance_Editorial {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String firstName = scan.next();
+        String lastName = scan.next();
+        int id = scan.nextInt();
+        int numScores = scan.nextInt();
+        int[] testScores = new int[numScores];
+        for (int i = 0; i < numScores; i++) {
+            testScores[i] = scan.nextInt();
+        }
+        scan.close();
+
+        Student_Editorial s = new Student_Editorial(firstName, lastName, id, testScores);
+        s.printPerson();
+        System.out.println("Grade: " + s.calculate());
     }
 }
 
